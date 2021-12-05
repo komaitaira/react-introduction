@@ -6,6 +6,11 @@ const style = {
 
 export const ChildArea = (props) => {
     const { open } = props;
+    const data = [...Array(100).keys()];
+    console.log("ChildAreaがレンダリングされた");
+    data.forEach(() => {
+        console.log("...");
+    });
     return (
         <>
             {open ? (
