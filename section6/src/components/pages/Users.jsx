@@ -1,4 +1,7 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import { UserContext } from "../../providers/UserProvider";
+import { SecondaryButton } from "../atoms/button/SecondaryButton";
 import { SearchInput } from "../molecules/SearchInput";
 import { UserCard } from "../organisms/user/UserCard";
 
@@ -16,23 +19,17 @@ const users = [...Array(10).keys()].map((val) => {
     };
 });
 
-// const user = {
-//     // id: val,
-//     name: `太郎`,
-//     image: "https://source.unsplash.com/G8cB8hY3yvU",
-//     email: "test@example.com",
-//     phone: "03-1111-2222",
-//     company: {
-//         name: "テスト株式会社",
-//     },
-//     website: "https://google.com",
-// };
-
 export const Users = () => {
+    const { userInfo, setUserInfo } = useContext(UserContext);
+    const onClickSwitch = () => {
+        setUserInfo({ isAdmin: !userInfo.isAdmin });
+    };
     return (
         <SContainer>
             <h2>ユーザー一覧</h2>
             <SearchInput />
+            <br />
+            <SecondaryButton onClick={onClickSwitch}>切り替え</SecondaryButton>
             <SUserArea>
                 {users.map((user) => (
                     <UserCard key={user.id} user={user} />
