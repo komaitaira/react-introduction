@@ -16,17 +16,17 @@ const users = [...Array(10).keys()].map((val) => {
     };
 });
 
-const user = {
-    // id: val,
-    name: `太郎`,
-    image: "https://source.unsplash.com/G8cB8hY3yvU",
-    email: "test@example.com",
-    phone: "03-1111-2222",
-    company: {
-        name: "テスト株式会社",
-    },
-    website: "https://google.com",
-};
+// const user = {
+//     // id: val,
+//     name: `太郎`,
+//     image: "https://source.unsplash.com/G8cB8hY3yvU",
+//     email: "test@example.com",
+//     phone: "03-1111-2222",
+//     company: {
+//         name: "テスト株式会社",
+//     },
+//     website: "https://google.com",
+// };
 
 export const Users = () => {
     return (
